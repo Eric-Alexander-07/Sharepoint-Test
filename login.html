@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Verarbeitung</title>
+    <script>
+        window.onload = function() {
+            // URL-Parameter auslesen
+            const urlParams = new URLSearchParams(window.location.search);
+            const user = urlParams.get('user');
+            const pass = urlParams.get('pass');
+
+            // Simpler Login-Test (echte Passwörter sollten NIE im Frontend überprüft werden!)
+            if (user === "admin" && pass === "1234") {
+                // Erfolgreich eingeloggt → Weiterleitung zum Dashboard
+                window.location.href = "dashboard.html";
+            } else {
+                document.body.innerHTML = "<h2>Login fehlgeschlagen</h2><a href='index.html'>Zurück</a>";
+            }
+        };
+    </script>
+</head>
+<body>
+    <p>Verarbeite Login...</p>
+</body>
+</html>
