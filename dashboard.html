@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <script>
+        window.onload = function() {
+            // Überprüfe, ob der Nutzer eingeloggt ist
+            if (sessionStorage.getItem("loggedIn") !== "true") {
+                window.location.href = "index.html"; // Zurück zur Login-Seite
+            }
+        };
+    </script>
 </head>
 <body>
 <div></div>
@@ -30,5 +38,11 @@
         s.parentNode.insertBefore(v, s);
     })(document, 'script');
 </script>  
+<script>
+    function logout() {
+        sessionStorage.removeItem("loggedIn"); // Login-Status löschen
+        window.location.href = "index.html"; // Zurück zur Login-Seite
+    }
+</script>
 </body>
 </html>
