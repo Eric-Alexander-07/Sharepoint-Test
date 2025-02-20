@@ -11,10 +11,7 @@
             const pass = urlParams.get('pass');
 
             if (user === "admin" && pass === "1234") {
-                // Speichere Login-Status in sessionStorage
                 sessionStorage.setItem("loggedIn", "true");
-
-                // Weiterleitung zum Dashboard
                 window.location.href = "dashboard.html";
             } else {
                 document.body.innerHTML = "<h2>Login fehlgeschlagen</h2><a href='index.html'>Zurück</a>";
