@@ -10,6 +10,28 @@
     <h2>Willkommen im Dashboard!</h2>
     <p>Du hast dich erfolgreich eingeloggt.</p>
     <a href="index.html">Abmelden</a>
-
+<script type="text/javascript">
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+          window.voiceflow.chat.load({
+            verify: { projectID: '6787d3787095924e8e3c0cf7' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production'
+          }).then((chat) => {
+            // Warten, bis das Widget vollständig geladen ist
+            const checkChatLoaded = setInterval(() => {
+              if (window.voiceflow && window.voiceflow.chat) {
+                window.voiceflow.chat.open();
+                clearInterval(checkChatLoaded);
+              }
+            }, 500);
+          });
+        };
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+        v.type = "text/javascript"; 
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+</script>  
 </body>
 </html>
